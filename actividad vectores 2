@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+#define TAM 5
+
+int main() {
+    int vector[TAM];
+    int i, suma = 0;
+    float promedio;
+
+    // Carga de datos del vector
+    printf("=== Carga de datos del vector ===\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Ingrese el valor para la posicion [%d]: ", i);
+        scanf("%d", &vector[i]);
+    }
+
+    // Suma de todos los datos
+    for (i = 0; i < TAM; i++) {
+        suma += vector[i];
+    }
+    printf("\nLa suma de todos los datos del vector es: %d\n", suma);
+
+    // Calculo del promedio
+    promedio = (float) suma / TAM;
+    printf("El promedio de los datos del vector es: %.2f\n", promedio);
+
+    return 0;
+}
