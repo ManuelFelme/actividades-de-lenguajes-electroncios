@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+#define TAM 5
+
+
+void comparar(int v1[], int v2[], int tam) {
+    int i;
+
+    printf("\n=== Resultado de la comparacion ===\n");
+    for (i = 0; i < tam; i++) {
+        printf("Posicion [%d] -> Vector1: %d | Vector2: %d => ", i, v1[i], v2[i]);
+
+        if (v1[i] > v2[i]) {
+            printf("Mayor: %d (pertenece al Vector1)\n", v1[i]);
+        } else if (v2[i] > v1[i]) {
+            printf("Mayor: %d (pertenece al Vector2)\n", v2[i]);
+        } else {
+            printf("Los valores son iguales\n");
+        }
+    }
+}
+
+int main() {
+    int vector1[TAM], vector2[TAM];
+    int i;
+
+    
+    printf("=== Carga de datos del Vector 1 ===\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Ingrese el valor para la posicion [%d]: ", i);
+        scanf("%d", &vector1[i]);
+    }
+
+    
+    printf("\n=== Carga de datos del Vector 2 ===\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Ingrese el valor para la posicion [%d]: ", i);
+        scanf("%d", &vector2[i]);
+    }
+
+    
+    comparar(vector1, vector2, TAM);
+
+    return 0;
+}
