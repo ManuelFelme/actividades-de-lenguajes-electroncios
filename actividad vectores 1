@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+#define TAM 5
+
+int main() {
+    int vector[TAM];
+    int i, pos;
+    char opcion;
+
+    // Carga inicial de los 5 valores
+    printf("=== Carga inicial del vector ===\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Ingrese el valor para la posicion [%d]: ", i);
+        scanf("%d", &vector[i]);
+    }
+
+    // Modificacion de posiciones a eleccion del usuario
+    do {
+        printf("\nQue posicion desea modificar (0 a %d)? ", TAM - 1);
+        scanf("%d", &pos);
+
+        if (pos >= 0 && pos < TAM) {
+            printf("Ingrese el nuevo valor para la posicion [%d]: ", pos);
+            scanf("%d", &vector[pos]);
+        } else {
+            printf("Posicion invalida. Intente de nuevo.\n");
+            continue;
+        }
+
+        printf("Desea modificar otra posicion? (s/n): ");
+        scanf(" %c", &opcion);
+
+    } while (opcion == 's' || opcion == 'S');
+
+    // Impresion final, uno por uno
+    printf("\n=== Datos finales del vector ===\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Posicion [%d]: %d\n", i, vector[i]);
+    }
+
+    return 0;
+}
