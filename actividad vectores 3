@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+#define TAM 5
+
+int main() {
+    int vector[TAM];
+    int i, pos;
+    char opcion;
+
+    // Carga de datos del vector
+    printf("=== Carga de datos del vector ===\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Ingrese el valor para la posicion [%d]: ", i);
+        scanf("%d", &vector[i]);
+    }
+
+    // Acceso puntual a los datos, elegido por el usuario
+    do {
+        printf("\nA que posicion desea acceder (0 a %d)? ", TAM - 1);
+        scanf("%d", &pos);
+
+        if (pos >= 0 && pos < TAM) {
+            printf("El valor en la posicion [%d] es: %d\n", pos, vector[pos]);
+        } else {
+            printf("Posicion invalida. Intente de nuevo.\n");
+        }
+
+        printf("Desea consultar otro dato? (s/n): ");
+        scanf(" %c", &opcion);
+
+    } while (opcion == 's' || opcion == 'S');
+
+    printf("\nPrograma finalizado.\n");
+
+    return 0;
+}
